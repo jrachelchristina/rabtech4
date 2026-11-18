@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopLite | Product Explorer</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#">ShopLite<span>.</span></a>
+    <div class="cart-summary" aria-live="polite">Cart <strong id="cart-count">0</strong></div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">DYNAMIC REST API CLIENT</p>
+      <h1>Find something <span>you love.</span></h1>
+      <p>Explore products, filter by category, and save items to your cart.</p>
+    </section>
+
+    <section class="toolbar" aria-label="Product controls">
+      <label class="search-wrap">
+        <span class="sr-only">Search products</span>
+        <input id="search-input" type="search" placeholder="Search products..." autocomplete="off">
+      </label>
+      <label class="sort-wrap">
+        <span class="sr-only">Sort products</span>
+        <select id="sort-select">
+          <option value="default">Sort: Featured</option>
+          <option value="low-high">Price: Low to high</option>
+          <option value="high-low">Price: High to low</option>
+          <option value="name">Name: A to Z</option>
+          <option value="rating">Top rated</option>
+        </select>
+      </label>
+    </section>
+
+    <nav id="category-tabs" class="category-tabs" aria-label="Product categories">
+      <button class="category-tab active" data-category="all">All products</button>
+    </nav>
+
+    <div id="status-message" class="status-message" role="status" aria-live="polite"></div>
+    <div id="error-banner" class="error-banner" role="alert" hidden>
+      <span id="error-text">Something went wrong.</span>
+      <button id="retry-button" type="button">Try again</button>
+    </div>
+    <section id="product-grid" class="product-grid" aria-label="Products">
+      <!-- Product cards are rendered here by app.js -->
+    </section>
+  </main>
+
+  <footer>ShopLite demo · Product data provided by Fake Store API</footer>
+</body>
+</html>
